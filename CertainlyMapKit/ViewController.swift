@@ -50,10 +50,11 @@ class ViewController: UIViewController, MKMapViewDelegate {
         guard annotation is AppleStore else { return nil }
         
         let identifier = "AppleStore"
-        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
         if annotationView == nil {
             annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             annotationView?.canShowCallout = true
+            annotationView?.animatesDrop = true
         } else {
             annotationView?.annotation = annotation
         }
@@ -70,10 +71,10 @@ class ViewController: UIViewController, MKMapViewDelegate {
             guard let location = placeMarks?.first?.location else {
                 print("No location found.")
                 return }
-            let annotation = AppleStore(title: "Custom", coordinate: CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude))
-//            self.mapView.addAnnotation(annotation)
-            self.mapView.showAnnotations([annotation], animated: true)
-                        
+            let annotation = AppleStore(title: "Favorite Location", coordinate: CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude))
+            
+            self.mapView.addAnnotation(annotation)
+            
             if let error = error {
                 print("CLError Network: \(CLError.Code.network)")
                 print("There was an \(error.localizedDescription).")
