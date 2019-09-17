@@ -15,25 +15,16 @@ class ViewController: UIViewController, MKMapViewDelegate {
     let mnSizeEastWest = 579363.0
     let minnesotaGeoCenter = CLLocationCoordinate2D(latitude: 46.350262, longitude: -94.188733)
     
-    let locationManager = CLLocationManager()
-    
     // Apple Stores
     let rosedaleCenter = AppleStore(title: "Rosedale", coordinate: CLLocationCoordinate2D(latitude: 45.012917, longitude: -93.173026))
     let southdale = AppleStore(title: "Southdale", coordinate: CLLocationCoordinate2D(latitude: 44.880363, longitude: -93.324003))
     let ridgedale = AppleStore(title: "Ridgedale", coordinate: CLLocationCoordinate2D(latitude: 44.968736, longitude: -93.436142))
     let moa = AppleStore(title: "Mall of America", coordinate: CLLocationCoordinate2D(latitude: 44.853721, longitude: -93.241964))
     
-    @IBOutlet weak var mapView: MKMapView!
-    @IBAction func addAddress(_ sender: UIBarButtonItem) {
-        let ac = UIAlertController(title: "Input Address", message: nil, preferredStyle: .alert)
-        ac.addTextField()
-        ac.addAction(UIAlertAction(title: "Done", style: .default, handler: { address in
-            guard let address = ac.textFields?[0].text else { return }
-            self.showCustomMapLocation(at: address)
-        }))
-        present(ac, animated: true, completion: nil)
-    }
+    let locationManager = CLLocationManager()
+    let geoCoder = CLGeocoder()
     
+    @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,9 +54,16 @@ class ViewController: UIViewController, MKMapViewDelegate {
     
     
     // Get location from user entered string
-    let geoCoder = CLGeocoder()
-//    var address = "1 Infinite Loop Cupertino CA 95014"
-//    let address = "16143 Flagstaff Ct N Rosemount MN 55068"
+    @IBAction func addAddress(_ sender: UIBarButtonItem) {
+        let ac = UIAlertController(title: "Input Address", message: nil, preferredStyle: .alert)
+        ac.addTextField()
+        ac.addAction(UIAlertAction(title: "Done", style: .default, handler: { address in
+            guard let address = ac.textFields?[0].text else { return }
+            self.showCustomMapLocation(at: address)
+        }))
+        present(ac, animated: true, completion: nil)
+    }
+    
     func showCustomMapLocation(at address: String) {
         geoCoder.geocodeAddressString(address) { (placeMarks, error) in
             guard let location = placeMarks?.first?.location else {
@@ -81,9 +79,5 @@ class ViewController: UIViewController, MKMapViewDelegate {
             }
         }
     }
-    
-    
-
-
 }
 
