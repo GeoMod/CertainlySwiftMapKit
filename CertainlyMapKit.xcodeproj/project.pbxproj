@@ -13,6 +13,7 @@
 		182329BA2321CA5D003E2FEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 182329B82321CA5D003E2FEE /* Main.storyboard */; };
 		182329BC2321CA5D003E2FEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 182329BB2321CA5D003E2FEE /* Assets.xcassets */; };
 		182329BF2321CA5D003E2FEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 182329BD2321CA5D003E2FEE /* LaunchScreen.storyboard */; };
+		184D5A652325E05B008BCA24 /* AppleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184D5A642325E05B008BCA24 /* AppleStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		182329BB2321CA5D003E2FEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		182329BE2321CA5D003E2FEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		182329C02321CA5D003E2FEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		184D5A642325E05B008BCA24 /* AppleStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				182329B22321CA5D003E2FEE /* AppDelegate.swift */,
 				182329B42321CA5D003E2FEE /* SceneDelegate.swift */,
+				184D5A642325E05B008BCA24 /* AppleStore.swift */,
 				182329B62321CA5D003E2FEE /* ViewController.swift */,
 				182329B82321CA5D003E2FEE /* Main.storyboard */,
 				182329BB2321CA5D003E2FEE /* Assets.xcassets */,
@@ -140,6 +143,7 @@
 			files = (
 				182329B72321CA5D003E2FEE /* ViewController.swift in Sources */,
 				182329B32321CA5D003E2FEE /* AppDelegate.swift in Sources */,
+				184D5A652325E05B008BCA24 /* AppleStore.swift in Sources */,
 				182329B52321CA5D003E2FEE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,6 +291,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Q332864D3;
 				INFOPLIST_FILE = CertainlyMapKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -305,6 +310,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Q332864D3;
 				INFOPLIST_FILE = CertainlyMapKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
