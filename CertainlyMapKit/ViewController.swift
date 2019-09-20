@@ -21,6 +21,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
     let ridgedale = AppleStore(title: "Ridgedale", coordinate: CLLocationCoordinate2D(latitude: 44.968736, longitude: -93.436142))
     let moa = AppleStore(title: "Mall of America", coordinate: CLLocationCoordinate2D(latitude: 44.853721, longitude: -93.241964))
     
+    
     let locationManager = CLLocationManager()
     let geoCoder = CLGeocoder()
     
@@ -33,7 +34,6 @@ class ViewController: UIViewController, MKMapViewDelegate {
         let center = MKCoordinateRegion(center: minnesotaGeoCenter, latitudinalMeters: mnSizeNorthSouth, longitudinalMeters: mnSizeEastWest)
         mapView.setRegion(center, animated: true)
         mapView.showsUserLocation = true
-        
         mapView.addAnnotations([rosedaleCenter, southdale, ridgedale, moa])
     }
     
